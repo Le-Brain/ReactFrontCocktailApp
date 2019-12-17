@@ -135,10 +135,10 @@ class Createrecipepage extends React.Component {
         return(
             <div>
             <Header />
+            {loading === false ? (
             <div className={classNames("c-create-recipe-block", {
                 "c-create-none-background" : loading
-            })}>
-                {loading === false ? ( 
+            })}> 
                 <div className="c-first-container">
                     <div className="c-image-upload-block">
                         <img id="imageOfRecipe" src={this.state.strDrinkThumb} className="c-image-upload" width="300" height="300" alt=""/>
@@ -221,10 +221,12 @@ class Createrecipepage extends React.Component {
                         </div>
                     </div>
                 </div>
-                ) : (<div className={classNames({ 'c-main__loading_block': loading })}>
-                        <div className={classNames({ 'c-main__loading_inner': loading })}></div>
-                    </div>)}
                 </div>
+                ) : (<div className="c-main">
+                        <div className={classNames({ 'c-main__loading_block': loading })}>
+                            <div className={classNames({ 'c-main__loading_inner': loading })}></div>
+                        </div>
+                    </div>)}
             </div>
         );
     }

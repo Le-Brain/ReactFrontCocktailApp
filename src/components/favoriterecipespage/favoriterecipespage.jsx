@@ -101,6 +101,7 @@ class Favoriterecipespage extends React.Component {
                     />
                     ))
                 )}
+                {this.state.recipes.length === 0 && loading=== false && <div className="o-empty-block"><div className="o-empty-list">Your list of favorite recipes is empty</div></div>}
                 </section>
                 </div>
         );

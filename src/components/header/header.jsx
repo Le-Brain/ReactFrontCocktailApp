@@ -8,7 +8,7 @@ class Header extends React.Component {
 	logOut() {
 		 sessionStorage.setItem('user', JSON.stringify({}));
 	}
-	
+
 	render() {
 		return(
             <div>
@@ -34,7 +34,7 @@ class Header extends React.Component {
 		        </nav>
 				<div className="c-search-add-form">
 					<div>
-						<input className="o-input" type='text' />
+						<input placeholder="Search recipe..." className="o-input" type='text' />
 						<button className="o-button-search">Search</button>
 					</div>
 					<Link to='/createrecipepage' className="o-button-add-recipe">Create Recipe</Link>

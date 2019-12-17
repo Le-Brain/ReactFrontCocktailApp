@@ -101,6 +101,7 @@ class Mainpage extends React.Component {
                     />
                     ))
                     )}
+                    {this.state.recipes.length === 0 && loading=== false && <div className="o-empty-block"><div className="o-empty-list">Recipes not found</div></div>}
                 </section>
             </div>
         );

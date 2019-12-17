@@ -1,22 +1,23 @@
 import React from 'react';
 import './cardofrecipe.scss';
 import { withRouter } from 'react-router-dom';
+import requestMyAPI from '../../api/request';
 
 class Cardofrecipe extends React.Component {
 	constructor(props) {
         super(props);
 		this.state = { namepage: "",
 					   user: JSON.parse(sessionStorage.getItem('user')),
-					   userId: this.props.userId
+					   userId: this.props.userId,
+					   userWhoCreate: {}
            };
       }
 
 	componentDidMount() {
-		/*requestMyAPI.get(`/users/getById/${this.state.userId}`).then(response => {
+		requestMyAPI.get(`/users/getById/${this.state.userId}`).then(response => {
             const user = response.data.data;
-            this.setState({ user: user });
-            console.log(this.state);
-        }) */
+            this.setState({ userWhoCreate: user });
+        })
 	} 
 
     render() {
@@ -41,10 +42,13 @@ class Cardofrecipe extends React.Component {
 				</div>
 			</div>
 			<article className="o-date-recipe">{this.props.dateModified}</article>
+			{this.props.page !== 'cocktailcompage' && <article className="o-user-who-create">{this.state.userWhoCreate.username}</article>}
 			{this.props.page === 'mainpage' && this.props.userId !== this.state.user.userId && <button className="o-button-add" data-id={this.props.idDrink} onClick={this.props.addRecipeToFavorite}>Add to Favorite</button>}
 			{this.props.page === 'myrecipespage' && <button className="o-button-delete" data-id={this.props.idDrink} onClick={this.props.deleteRecipe}>Delete</button>}
 			{this.props.page === 'favoriterecipespage' && <button className="o-button-delete" data-id={this.props.idDrink} onClick={this.props.deleteFavoriteRecipe}>Delete</button>}
-			<button className="o-button-about">Show recipe</button>
+			{this.props.page !== 'cocktailcompage' ? 
+			(<button className="o-button-about" onClick={() => this.props.history.push(`/fullrecipepage/${this.props.idDrink}`)}>Show recipe</button>) :
+			(<button className="o-button-about" >Show recipe</button>)}
 		</div>
         );
     };

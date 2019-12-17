@@ -167,6 +167,27 @@
 	color: black;
 }
 
+.o-user-who-create {
+	display: flex;
+	align-items: center;
+	width: 450px;
+	height: auto;
+	position: absolute;
+	left: 450px;
+	bottom: 10px;
+	font-size: 0.9rem;
+}
+
+.o-user-who-create:before {
+	content: "";
+	display: block;
+	width: 20px;
+	height: 20px;
+	background-image: url('../../assets/user_avatar.png');
+	background-size: 20px 20px;
+	margin-right: 5px;
+}
+
 .o-date-recipe {
 	display: flex;
 	align-items: center;
@@ -175,17 +196,17 @@
 	position: absolute;
 	left: 280px;
 	bottom: 10px;
-	font-size: 1.1rem;
+	font-size: 0.9rem;
 }
 
 .o-date-recipe:before {
 	content: "";
 	display: block;
-	width: 25px;
-	height: 25px;
+	width: 20px;
+	height: 20px;
 	background-image: url('../../assets/date.jpg');
-	background-size: 25px 25px;
-	margin-right: 10px;
+	background-size: 20px 20px;
+	margin-right: 5px;
 }
 
 .o-article-ingredient:before {

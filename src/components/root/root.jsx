@@ -7,6 +7,7 @@ import Loginpage from '../loginpage/loginpage';
 import { Route, Switch } from 'react-router-dom';
 import UserContext from '../../contexts/user-context';
 import Myrecipespage from '../myrecipespage/myrecipespage';
+import Fullrecipe from '../fullrecipe/fullrecipe';
 
 import './root.css';
 
@@ -35,6 +36,7 @@ class Root extends React.Component {
           <Route path='/favoriterecipes' component={Favoriterecipespage} />
           <Route path='/cocktailcom' component={Cocktailcompage} />
           <Route path='/createrecipepage' component={Createrecipepage} />
+          <Route path='/fullrecipepage/:recipeId' component={Fullrecipe} />
        </Switch>
     </div>
     </UserContext.Provider>

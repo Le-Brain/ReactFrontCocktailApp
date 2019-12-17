@@ -1,0 +1,27 @@
+.o-empty-block {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: auto;
+}
+
+.o-empty-list {
+    display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    margin-top: 100px;
+    font-size: 2rem;
+    color: black;
+}
+
+.o-empty-list:before {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 70px;
+    background-image: url('../../assets/empty.png');
+    background-size: 70px 70px;
+    margin-right: 20px;
+}
