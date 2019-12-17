@@ -1,0 +1,176 @@
+.c-create-recipe-block {
+    display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	height: 800px;
+	width: 1000px;
+	margin: 20px auto 0px auto;
+	background-image: url('../../assets/background.jpg');
+	border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.c-first-container {
+	display: flex;
+	justify-content: center;;
+	height: auto;
+	width: 1000px;
+}
+
+.c-image-upload-block {
+	display: flex;
+	flex-direction: column;
+	margin-top: 20px;
+	align-items: center;
+	justify-content: flex-start;;
+	height: auto;
+	width: 400px;
+}
+
+.c-form-container {
+	display: flex;
+	height: auto;
+	width: 600px;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	padding-top: 20px;
+}
+
+.c-image-upload {
+	display: block;
+	width: 300px;
+	height: 300px;
+	background-image: url('../../assets/image-not.png');
+	background-size: 300px 300px;
+	background-position: center;
+	border-radius: 5px;
+	border: 1px dotted black;
+}
+
+.o-aprrove-form {
+	text-decoration: none;
+	display: flex;
+	margin-top: 20px;
+	justify-content: center;
+	align-items: center;
+	font-size: 1rem;
+	width: 300px;
+	height: 40px;
+	border: none;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	border-radius: 3px;
+	background-color: #8bc34a;
+	color: white;
+	outline: 0;
+	text-decoration: none;
+}
+
+.o-aprrove-form:disabled {
+	display: flex;
+	margin-top: 20px;
+	justify-content: center;
+	align-items: center;
+	font-size: 1rem;
+	width: 300px;
+	height: 40px;
+	border: none;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	border-radius: 3px;
+	background-color: red;
+	color: white;
+	outline: 0;
+	text-decoration: none;
+}
+
+.c-create-none-background {
+	background-color: none;
+	background-image: none;
+}
+
+.o-title-input {
+	width: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 20px;
+	background-color: black;
+	color: white;
+	border-radius: 3px;
+	height: 40px;
+}
+
+.o-text-area {
+	margin-top: 10px;
+	font-family: 'Titillium Web', sans-serif;
+	border: solid 1px #e0e0e0;
+	border-radius: 3px;
+	background-color: #ffffff;
+	font-size: 0.875rem;
+	padding: 11px 0px 12px 14px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	font-weight: bold;
+	color: black;
+}
+
+.o-input-and-article {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	display: inline-flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: auto;
+}
+.o-aprrove-form:hover {
+	cursor: pointer;
+	opacity: 0.7;
+}
+
+.o-input_createrecipe {
+	width: 270px;
+}
+.o-title-long-input {
+	margin-top: 10px;
+	width: 300px;
+}
+
+.o-input-small {
+	width: 150px;
+	margin-right: 10px;
+}
+
+.example-1 .form-group {
+	padding: 1em;
+}
+.example-1 input[type=file]{
+	outline: 0;
+	opacity: 0;
+	pointer-events: none;
+	user-select: none;
+}
+.example-1 .label{
+	height: 50px; 
+	width:300px;
+	border:2px dashed grey;
+	border-radius:5px;
+	display:block;
+	padding: 0;
+	transition:border 300ms ease;
+	cursor:pointer;
+	text-align:center;
+}
+.example-1 .label i{
+	display:block;
+	font-size:32px;
+	padding-bottom:16px;
+}
+.example-1 .label i,.example-1 .label .title{
+	color:grey;
+	transition: 200ms color;
+}
+.example-1 .label:hover{
+	border:2px solid #000
+}
+.example-1 .label:hover i,.example-1 .label:hover .title{
+	color:#000
+}

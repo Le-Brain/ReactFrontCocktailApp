@@ -1,0 +1,47 @@
+.o-button-login {
+    text-decoration: none;
+	display: flex;
+	margin-top: 20px;
+	justify-content: center;
+	align-items: center;
+	font-size: 1rem;
+	width: 300px;
+	height: 40px;
+	border: none;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	border-radius: 3px;
+	background-color: #8bc34a;
+	color: white;
+	outline: 0;
+	text-decoration: none;
+}
+
+.o-button-login:after {
+    content: "Log in";
+}
+
+.o-disabled-button {
+    pointer-events: none;
+    background-color: red;
+}
+
+.o-disabled-button:after {
+    content: "Please choose user";
+}
+
+.c-form-login {
+    display: flex;
+    width: auto;
+    height: 300px;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.o-select {
+    width: 300px;
+    height: 40px;
+    font-family: 'Titillium Web', sans-serif;
+    padding: 10px;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
