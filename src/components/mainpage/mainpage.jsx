@@ -8,7 +8,7 @@ import UserContext from '../../contexts/user-context';
 
 class Mainpage extends React.Component {
     
-    state = { recipes: [], loading: false, page: "mainpage", user: JSON.parse(sessionStorage.getItem('user')) };
+    state = { recipes: [], loading: false, page: 'mainpage', user: JSON.parse(sessionStorage.getItem('user')), message: '' };
 
     static contextType = UserContext;
 
@@ -26,7 +26,7 @@ class Mainpage extends React.Component {
         const { id } = e.target.dataset;
         this.setState({ loading: true });
 		requestMyAPI.post('/users/favoriterecipes/add/', { userId: userId, recipeId: id }).then((res) => {
-        console.log(res.data);
+        this.setState({ message: res.data.message });
         requestMyAPI.get('/recipes').then(response => {
             const recipes = response.data.data;
             this.setState({ recipes, loading: false });
@@ -42,11 +42,12 @@ class Mainpage extends React.Component {
             <div>
             <Header />
             <section className={classNames('c-main')}>
+            {this.state.message === 'USER_ALREADY_HAVE_RECIPE' && loading===false && <div className="o-message-error-block"><div className="o-message-error">Error: You already added this recipe to your favorites</div></div>}
             {loading === true ? (<div className={classNames({ 'c-main__loading_block': loading })}>
                 <div className={classNames({ 'c-main__loading_inner': loading })}>
                 </div>
             </div> ) : (
-            this.state.recipes.map((
+                this.state.recipes.map((
                 {   idDrink,
                     userId,
                     strDrink, 

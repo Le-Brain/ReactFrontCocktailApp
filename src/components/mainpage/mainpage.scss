@@ -16,3 +16,32 @@
 	margin: 0px auto 0px auto;
 	background-color: none;
 }
+
+.o-message-error-block {
+    display: inline-flex;
+	justify-content: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+    align-items: center;
+    width: 800px;
+    height: auto;
+}
+
+.o-message-error {
+	display: flex;
+    align-items: center;
+    width: auto;
+    height: auto;
+    font-size: 2rem;
+    color: black;
+}
+
+.o-message-error:before {
+	content: "";
+    display: block;
+    width: 70px;
+    height: 70px;
+    background-image: url('../../assets/empty.png');
+    background-size: 70px 70px;
+    margin-right: 20px;
+}

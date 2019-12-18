@@ -1,0 +1,95 @@
+.o-article-fullrecipe {
+    display: flex;
+    flex-wrap: wrap;
+    width: 270px;
+    height: auto;
+    word-break: break-all;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.o-article-small-fullrecipe {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    text-align: center;
+    width: 140px;
+    word-break: break-all;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.o-header-title-instructions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    align-items: center;
+    width: 300px;
+    height: 40px;
+}
+
+.o-header-title-ingredient {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    font-size: 1.2rem;
+    background-color: none;
+    width: 150px;
+}
+
+.o-header-title-basic {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    font-size: 1.2rem;
+    background-color: none;
+    width: 300px;
+}
+
+.o-header-title-ingredient:before {
+    content: "";
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-image: url('../../assets/image-ingredient2.png');
+    background-size: 40px 40px;
+}
+
+.o-header-title-measure {
+    display: flex;
+    margin-left: 10px;
+    align-items: center;
+    height: 40px;
+    font-size: 1.2rem;
+    background-color: none;
+    width: 150px;
+}
+
+.o-header-title-measure:before {
+    content: "";
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-image: url('../../assets/measure.png');
+    background-size: 40px 40px;
+}
+
+.o-instructions-fullrecipe {
+    display: block;
+    word-break: break-all;
+    border-radius: 3px;
+    background-color: white;
+    margin-top: 20px;
+    padding: 10px;
+    width: 300px;
+    min-height: inherit;
+    height: auto;
+    font-size: 1.2rem;
+}
