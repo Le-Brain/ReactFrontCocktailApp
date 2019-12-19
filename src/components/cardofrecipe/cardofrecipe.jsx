@@ -60,7 +60,10 @@ class Cardofrecipe extends React.Component {
           (<button className="o-button-about" onClick={() => 
           this.props.history.push(`/fullrecipepage/${this.props.idDrink}`)}>Show recipe</button>)
         }
-        {this.props.page === 'myrecipespage' && <div className="o-edit"></div>}
+        {this.props.page === 'myrecipespage' && 
+          <div className="o-edit" onClick={() => 
+            this.props.history.push(`/editrecipepage/${this.props.idDrink}`)}/>
+        }
       </div>
     );
   };

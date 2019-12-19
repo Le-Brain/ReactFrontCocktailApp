@@ -1,4 +1,8 @@
 .c-create-recipe-block {
+	animation-name: movingBox;
+	animation-duration: 400ms;
+	animation-iteration-count: 1;
+	animation-timing-function: linear;
     display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
