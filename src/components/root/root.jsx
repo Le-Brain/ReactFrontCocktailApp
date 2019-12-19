@@ -30,13 +30,13 @@ class Root extends React.Component {
     <UserContext.Provider value={{auth: this.state.auth, username: this.state.username, userAuth: this.userAuth, user: this.state.user }}>
     <div>
       <Switch>
-          <Route exact path='/' component={Loginpage} />
-          <Route path='/maincatalog' component={Mainpage} />
-          <Route path='/myrecipes' component={Myrecipespage} />
-          <Route path='/favoriterecipes' component={Favoriterecipespage} />
-          <Route path='/cocktailcom' component={Cocktailcompage} />
-          <Route path='/createrecipepage' component={Createrecipepage} />
-          <Route path='/fullrecipepage/:recipeId' component={Fullrecipe} />
+        <Route exact path='/' component={Loginpage} />
+        <Route path='/maincatalog' component={Mainpage} />
+        <Route path='/myrecipes' component={Myrecipespage} />
+        <Route path='/favoriterecipes' component={Favoriterecipespage} />
+        <Route path='/cocktailcom' component={Cocktailcompage} />
+        <Route path='/createrecipepage' component={Createrecipepage} />
+        <Route path='/fullrecipepage/:recipeId' component={Fullrecipe} />
        </Switch>
     </div>
     </UserContext.Provider>

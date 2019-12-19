@@ -7,6 +7,6 @@ const rootElement = document.querySelector('#root');
 
 ReactDOM.render(
 <BrowserRouter>
-    <Root />
+  <Root />
 </BrowserRouter>
 , rootElement);

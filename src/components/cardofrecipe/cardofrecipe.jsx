@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 import requestMyAPI from '../../api/request';
 
 class Cardofrecipe extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -36,19 +37,29 @@ class Cardofrecipe extends React.Component {
             {
               [1, 2, 3, 4, 5, 6, 7].map(item => {
                 const ingr = this.props[`strIngredient${item}`];
-                return ingr ? <article className="o-article-ingredient">{ingr}</article> : null
+                return ingr ? <article key={item} className="o-article-ingredient">{ingr}</article> : null
               })
             }
           </div>
         </div>
         <article className="o-date-recipe">{this.props.dateModified}</article>
-        {this.props.page !== 'cocktailcompage' && <article className="o-user-who-create">{this.state.userWhoCreate.username}</article>}
-        {this.props.page === 'mainpage' && this.props.userId !== this.state.user.userId && <button className="o-button-add" data-id={this.props.idDrink} onClick={this.props.addRecipeToFavorite}>Add to Favorite</button>}
-        {this.props.page === 'myrecipespage' && <button className="o-button-delete" data-id={this.props.idDrink} onClick={this.props.deleteRecipe}>Delete</button>}
-        {this.props.page === 'favoriterecipespage' && <button className="o-button-delete" data-id={this.props.idDrink} onClick={this.props.deleteFavoriteRecipe}>Delete</button>}
+        {this.props.page !== 'cocktailcompage' && 
+          <article className="o-user-who-create">{this.state.userWhoCreate.username}</article>}
+        {this.props.page === 'mainpage' && this.props.userId !== this.state.user.userId && 
+          <button className="o-button-add" data-id={this.props.idDrink} 
+          onClick={this.props.addRecipeToFavorite}>Add to Favorite</button>}
+        {this.props.page === 'myrecipespage' && 
+          <button className="o-button-delete" data-id={this.props.idDrink} 
+          onClick={this.props.deleteRecipe}>Delete</button>}
+        {this.props.page === 'favoriterecipespage' && 
+          <button className="o-button-delete" data-id={this.props.idDrink} 
+          onClick={this.props.deleteFavoriteRecipe}>Delete</button>}
         {this.props.page !== 'cocktailcompage' ?
-          (<button className="o-button-about" onClick={() => this.props.history.push(`/fullrecipepage/${this.props.idDrink}`)}>Show recipe</button>) :
-          (<button className="o-button-about" onClick={() => this.props.history.push(`/fullrecipepage/${this.props.idDrink}`)}>Show recipe</button>)}
+          (<button className="o-button-about" onClick={() => 
+            this.props.history.push(`/fullrecipepage/${this.props.idDrink}`)}>Show recipe</button>) :
+          (<button className="o-button-about" onClick={() => 
+          this.props.history.push(`/fullrecipepage/${this.props.idDrink}`)}>Show recipe</button>)
+        }
         {this.props.page === 'myrecipespage' && <div className="o-edit"></div>}
       </div>
     );
