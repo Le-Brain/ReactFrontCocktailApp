@@ -65,7 +65,7 @@ class Fullrecipe extends React.Component {
               <div className="o-header-title-ingredient">Ingredient1: </div>
               <article className="o-article-small-fullrecipe">{this.state.recipe.strIngredient1}</article>
               <div className="o-header-title-measure">Measure1</div>
-              <article className="o-article-small-fullrecipe">{this.state.recipe.strIngredient1}</article>
+              <article className="o-article-small-fullrecipe">{this.state.recipe.strMeasure1}</article>
             </div>}
             {this.state.recipe.strIngredient2!=="" && this.state.recipe.strIngredient2!==null && <div className="o-input-and-article">
               <div className="o-header-title-ingredient">Ingredient2: </div>

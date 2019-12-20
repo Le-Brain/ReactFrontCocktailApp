@@ -9,10 +9,20 @@
 	}
 	display: flex;
 	padding-top: 20px;
+	position: relative;
 	justify-content: center;
 	flex-wrap: wrap;
 	height: auto;
 	width: 1000px;
 	margin: 0px auto 0px auto;
 	background-color: none;
+}
+
+.o-block-search-form-for-cocktailcompage {
+	display: flex;
+	width: auto;
+	height: auto;
+	position: absolute;
+	top: -40px;
+	left: 0px;
 }

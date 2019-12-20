@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './header.scss';
 
 class Header extends React.Component {
-  state = { user: JSON.parse(sessionStorage.getItem('user')) }
+  state = { namepage: "", user: JSON.parse(sessionStorage.getItem('user')) }
   
   logOut() {
     sessionStorage.setItem('user', JSON.stringify({}));
@@ -34,8 +34,11 @@ class Header extends React.Component {
       </nav>
       <div className="c-search-add-form">
         <div>
-          <input placeholder="Search recipe..." className="o-input" type='text' />
-          <button className="o-button-search">Search</button>
+          {this.props.page!=="cocktailcompage" && 
+            <div className="o-title-make">
+              Create your own and try others' cocktails
+            </div>
+          }
         </div>
         <Link to='/createrecipepage' className="o-button-add-recipe">Create Recipe</Link>
       </div>

@@ -120,6 +120,7 @@
 .c-search-add-form {
 	display: flex;
 	justify-content: space-between;
+	position: relative;
 	background-color: none;
 	flex-wrap: no-wrap;
 	height: 40px;
@@ -182,4 +183,13 @@
 	box-shadow: 0 0 10px rgba(0,0,0,0.5);
 	font-weight: bold;
 	color: black;
+}
+
+.o-title-make {
+	display: inline-flex;
+	width: 600px;
+	height: 40px;
+	margin-left: 80px;
+	font-family: 'Ma Shan Zheng', cursive;;
+	font-size: 2.5rem;
 }

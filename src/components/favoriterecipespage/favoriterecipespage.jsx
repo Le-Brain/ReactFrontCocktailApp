@@ -38,7 +38,9 @@ class Favoriterecipespage extends React.Component {
 
     return(
     <div>
-      <Header />
+      <Header 
+        page={this.state.page}
+      />
       <section className={classNames('c-main')}>
       {loading === true ? (
       <div className={classNames({ 'c-main__loading_block': loading })}>

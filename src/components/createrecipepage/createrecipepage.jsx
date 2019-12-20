@@ -130,7 +130,9 @@ class Createrecipepage extends React.Component {
     const { loading } = this.state;
     return(
     <div>
-      <Header />
+      <Header 
+        page={this.state.page}
+      />
       {loading === false ? (
       <div className={classNames("c-create-recipe-block", {
           "c-create-none-background" : loading

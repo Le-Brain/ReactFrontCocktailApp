@@ -40,7 +40,9 @@ class Mainpage extends React.Component {
 
     return(
     <div>
-      <Header />
+      <Header 
+        page={this.state.page}
+      />
       <section className={classNames('c-main')}>
         {this.state.message === 'USER_ALREADY_HAVE_RECIPE' && loading===false && 
           <div className="o-message-error-block">

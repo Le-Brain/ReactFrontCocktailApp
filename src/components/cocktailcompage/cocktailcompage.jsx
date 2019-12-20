@@ -8,7 +8,7 @@ import UserContext from '../../contexts/user-context';
 
 class Cocktailcompage extends React.Component {
     
-  state = { recipes: [], loading: false, page: "cocktailcompage", user: JSON.parse(sessionStorage.getItem('user')) };
+  state = { searchInput: "", recipes: [], loading: false, page: "cocktailcompage", user: JSON.parse(sessionStorage.getItem('user')) };
   static contextType = UserContext;
 
   componentDidMount() {
@@ -19,17 +19,37 @@ class Cocktailcompage extends React.Component {
     })
   }
 
+  searchInputHandler = (e) => {
+    this.setState({ searchInput: e.target.value });
+  }
+
+  searchCocktails = (e) => {
+    this.setState({ loading: true });
+    requestPublicApi.get(`?s=${this.state.searchInput}`).then(response => {
+      const recipes = response.data.drinks;
+      this.setState({ recipes, loading: false });
+    })
+  }
+
   render() {
     const { loading } = this.state;
 
     return(
     <div>
-      <Header />
+      <Header 
+        page={this.state.page}
+        searchCocktails={this.searchCocktails}
+        searchInputHandler={this.searchInputHandler}
+      />
       <section className={classNames('c-main')}>
+        <div className="o-block-search-form-for-cocktailcompage">
+          <input placeholder="Search recipe..." value={this.state.searchInput} className="o-input" type='text' onChange={this.searchInputHandler}/>
+          <button className="o-button-search" onClick={this.searchCocktails}>Search</button>
+        </div>
         <div className={classNames({ 'c-main__loading_block': loading })}>
           <div className={classNames({ 'c-main__loading_inner': loading })} />
         </div>
-        {this.state.recipes.map((
+        {this.state.recipes!==null && this.state.recipes.map((
         { idDrink,
           userId,
           strDrink, 
@@ -82,6 +102,13 @@ class Cocktailcompage extends React.Component {
           key={idDrink}
         />
       ))}
+      {this.state.recipes===null && this.state.loading===false &&
+        <div className="o-empty-block">
+          <div className="o-empty-list">
+            Recipes Not Found
+          </div>
+        </div>
+      }
       </section>
     </div>
     );
